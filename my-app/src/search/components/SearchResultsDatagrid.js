@@ -2,16 +2,19 @@ import { DataGrid } from '@mui/x-data-grid';
 
 const columns = [
   { field: 'id', headerName: 'ID', width: 120 },
+  { field: 'stars', headerName: 'stars', width: 120 },
 ];
 
 const rows = [
 
 ];
 
-function SearchResultsDatagrid() {
+function SearchResultsDatagrid(props) {
+  const repositories = props.repositories ? props.repositories : []
+
   return (
     <DataGrid
-      rows={rows}
+      rows={repositories}
       columns={columns}
       pageSize={5}
       rowsPerPageOptions={[5]}
