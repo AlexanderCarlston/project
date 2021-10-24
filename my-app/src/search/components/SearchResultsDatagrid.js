@@ -10,7 +10,7 @@ function SearchResultsDatagrid(props) {
   const repositories = props.repositories ? props.repositories : []
 
   // Only if there are repositories
-  function handleColumnClick(event) {
+  function handleRowClick(event) {
     if(repositories.length === 0) {return}
     console.log(event)
   }
@@ -21,7 +21,8 @@ function SearchResultsDatagrid(props) {
       columns={columns}
       autoPageSize={true}
       className="results-datagrid"
-      onColumnHeaderClick={handleColumnClick}
+      onRowClick={handleRowClick}
+      loading={props.loading}
     />
   )
 }

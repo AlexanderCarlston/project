@@ -64,3 +64,7 @@ Smaller inital request<br>
 <br>
 Cons:<br>
 Loading everytime user navigates page.
+
+## Features that need to be added for UI/UX
+
+1.) Error handle if request fails (add notifications)

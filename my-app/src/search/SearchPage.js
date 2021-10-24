@@ -11,16 +11,21 @@ const octokit = new Octokit()
 function SearchPage() {
   const [repositories, setRepositories] = React.useState([])
   const [inputString, setInputString] = React.useState("")
+  const [loading, setLoading] = React.useState(false)
 
   async function handleKeyPress(event) {
     if(event.key === 'Enter'){
+      setLoading(true)
+
       let result = await octokit.request('GET /search/repositories', {
         q: inputString,
         per_page: 100
       })
 
-      console.log(result)
-      setRepositories(result.data.items)
+      setLoading(false)
+
+      // Checks that result is successful
+      setRepositories(result && result.data && result.data.items ? result.data.items : [])
     }
   }
 
@@ -38,8 +43,7 @@ function SearchPage() {
 
       <Container maxWidth="md" spacing={4}>
         <Grid item className="results-datagrid-container">
-
-          <SearchResultsDatagrid repositories={repositories}></SearchResultsDatagrid>
+          <SearchResultsDatagrid repositories={repositories} loading={loading}></SearchResultsDatagrid>
         </Grid>
       </Container>
     </main>
