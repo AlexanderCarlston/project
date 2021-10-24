@@ -3,8 +3,8 @@ import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import SearchResultsDatagrid from "./components/SearchResultsDatagrid";
 import React from 'react'
-import './SearchPage.css';
 import { Octokit } from "@octokit/core"
+import './SearchPage.css';
 
 const octokit = new Octokit()
 
