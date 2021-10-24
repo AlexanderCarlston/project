@@ -5,25 +5,44 @@ import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import SearchPage from './search/SearchPage'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect
+} from "react-router-dom";
+import DetailsPage from "./details/DetailsPage"
 
 const theme = createTheme();
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline/>
-  
-      <AppBar position="relative">
-        <Toolbar>
-          <Typography variant="h6" color="inherit">
-            Github Repository Lookup
-          </Typography>
-        </Toolbar>
-      </AppBar>
+    <Router>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
 
-      <SearchPage></SearchPage>
+        <AppBar position="relative">
+          <Toolbar>
+            <Typography variant="h6" color="inherit">
+              Github Repository Lookup
+            </Typography>
+          </Toolbar>
+        </AppBar>
 
-    </ThemeProvider>
+        <Switch>
+          <Route exact path="/">
+            <Redirect to="/search"></Redirect>
+          </Route>
+          <Route path='/search'>
+            <SearchPage></SearchPage>
+          </Route>
+          <Route path='/details/:owner/:repositoryName'>
+            <DetailsPage></DetailsPage>
+          </Route>
+        </Switch>
+
+      </ThemeProvider>
+    </Router>
   );
 }
 

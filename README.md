@@ -12,6 +12,14 @@
 - [X] Page that shows detailed information on clicked repository
 - [X] Responsive design
 
+## Installation
+
+Can replace npm with yarn
+```
+cd my-app
+npm install
+npm run start
+```
 
 ## Requirement Decisions and potential changes
 
@@ -68,3 +76,5 @@ Loading everytime user navigates page.
 ## Features that need to be added for UI/UX
 
 1.) Error handle if request fails (add notifications)
+
+2.) Filled out fields around repository details
