@@ -1,24 +1,27 @@
 import { DataGrid } from '@mui/x-data-grid';
 
 const columns = [
-  { field: 'id', headerName: 'ID', width: 120 },
-  { field: 'stars', headerName: 'stars', width: 120 },
-];
-
-const rows = [
-
+  { field: 'name', headerName: 'Name', width: 200 },
+  { field: 'language', headerName: 'Language', width: 200 },
+  { field: 'stargazers_count', headerName: 'Stars', width: 200 },
 ];
 
 function SearchResultsDatagrid(props) {
   const repositories = props.repositories ? props.repositories : []
 
+  // Only if there are repositories
+  function handleColumnClick(event) {
+    if(repositories.length === 0) {return}
+    console.log(event)
+  }
+
   return (
     <DataGrid
       rows={repositories}
       columns={columns}
-      pageSize={5}
-      rowsPerPageOptions={[5]}
+      autoPageSize={true}
       className="results-datagrid"
+      onColumnHeaderClick={handleColumnClick}
     />
   )
 }
