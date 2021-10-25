@@ -54,7 +54,7 @@ In my mind for the MVP this is fine because the requirements state that the app 
 
 ### Load all data on on initial search
 
-In this approach we would essentially do one request at the beginning to get the first page of data, and if there were more results (response send data "total items") then we would do batch requests for every page that we needed. This would allow us to aggregate all results.
+In this approach we would essentially do one request at the beginning to get the first page of data, and if there were more results (response send data "total items") then we would do batch requests for every page that we needed. This would allow us to aggregate all results. We would also have to do a refresh request when the data grid is filtered and do a new request with the sorting in ascending or descending order.
 <br>
 <br>
 
