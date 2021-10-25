@@ -56,6 +56,8 @@ In my mind for the MVP this is fine because the requirements state that the app 
 
 In this approach we would essentially do one request at the beginning to get the first page of data, and if there were more results (response send data "total items") then we would do batch requests for every page that we needed. This would allow us to aggregate all results.
 <br>
+<br>
+
 Pros:<br>
 No requests needed for page navigation
 
@@ -66,6 +68,8 @@ The first initial request would be long
 
 In this approach we used the total items property to calculate how many pages there would be, and everytime user navigates we send a new request to get the page that the user navigated to. We could also keep the repositories from past page, allowing back page to not send a request.
 <br>
+<br>
+
 Pros:<br>
 Smaller inital request<br>
 <br>
