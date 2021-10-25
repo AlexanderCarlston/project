@@ -77,8 +77,6 @@ Loading everytime user navigates page.
 
 1.) Error handle if request fails (add notifications)
 
-2.) Filled out fields around repository details
+2.) Improved design on details page
 
-## My ultimate goal
-
-So my ultimate goal here was to get the functionality needed for each functionality, in the real world I would've worked with product owner or designer to go through specifics. For example details page didn't have any specifics, so I would've worked with product owner to get specifics. The functionality that I got working would allow any properties that they want and presentationw as kept simple so they could decide on how they think best to show it.
+3.) When navigating back, should store values previously stored (state management?)
