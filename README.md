@@ -43,8 +43,7 @@ My assumption is that this is programming language.
 
 ### Page that shows detailed information on clicked repository
 
-Since this is open requirement I normally would work with design to design page, but since I'm using material UI I'll try to use
-it's design concepts to implement a MVP for this.
+This requirement is very open on design, my biggest concern is scope creep with this. In the real world I would focus on making sure I have the functionality to get the data and showcase it in a very basic way. Since making design decisions on my own isn't usually the way to go.
 
 ## Assumptions or Limitations
 
