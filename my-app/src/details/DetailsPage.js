@@ -25,7 +25,7 @@ function DetailsPage() {
         repo: repositoryName
       })
 
-      console.log(result.data, result.data.description)
+      // Checks for correct result
       setCurrentRepo(result && result.data ? result.data : {})
     }
 
@@ -50,7 +50,6 @@ function DetailsPage() {
       <Container sx={{ py:0 }} maxWidth="md">
         <Grid item xs={12} md={12}>
           <Typography variant="h3" color="inherit">
-            {/* Github Repository Lookup */}
             <List>
               <ListItem>
                 <ListItemText primary="Owner:" />
